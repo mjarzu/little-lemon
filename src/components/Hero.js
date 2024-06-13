@@ -27,9 +27,8 @@ function Hero() {
               <h1>Little Lemon</h1>
               <h2>Chicago</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent euismod condimentum ante finibus consequat. Donec
-                Mauris accumsan tellus mi, vitae rutrum felis scelerisque at.{" "}
+                We are a family owned Mediterranean restaurant, focused on
+                traditional recipes served with a modern twist.
               </p>
               <button onClick={handleSubmit} aria-label="Reserve a table">
                 Reserve a table
