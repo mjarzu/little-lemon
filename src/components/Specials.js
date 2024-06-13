@@ -3,7 +3,7 @@ import SpecialCard from "./SpecialCard";
 import "../assets/styles/Specials.css";
 
 import greekSalad from "../assets/images/greekSalad.jpg";
-import bruchetta from "../assets/images/bruchetta.svg";
+import bruchetta from "../assets/images/bruschetta.jpg";
 import lemonDessert from "../assets/images/lemonDessert.jpg";
 
 const specialsData = [
