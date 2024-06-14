@@ -51,42 +51,52 @@ function Footer() {
                     <p>Testimonials</p>
                   </Link>
                 </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="footer-header">Contact</h2>
+              <ul>
                 <li>
-                  <Link
-                    to="/"
-                    onClick={() => {
-                      scrollTo("#about");
-                    }}
+                  <address>
+                    Little Lemon <br />
+                    331 E Chicago <br />
+                    LaSalle Street Chicago,
+                    <br />
+                    Illinois 60602 USA
+                  </address>
+                </li>
+                <br />
+                <li>
+                  {" "}
+                  <a
+                    href="tel:+551199999999"
+                    target="_blank"
+                    rel="external noreferrer"
                   >
-                    <p>About</p>
-                  </Link>
+                    +55 11 9999-9999
+                  </a>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <a
+                    href="mailto:contact@littlelemon.com"
+                    target="_blank"
+                    rel="external noreferrer"
+                  >
+                    contact@littlelemon.com
+                  </a>{" "}
                 </li>
               </ul>
             </div>
             <div>
-            <h2 className="footer-header">Contact</h2>
-            <ul>
-            <li>
-              <address>
-                Little Lemon <br />
-                331 E Chicago <br />
-                LaSalle Street Chicago,<br />
-                Illinois 60602 USA
-              </address>
-            </li>
-            <br/>
-            <li> <a href="tel:+551199999999" target="_blank" rel="external noreferrer">+55 11 9999-9999</a> </li>
-            <li> <a href="mailto:contact@littlelemon.com" target="_blank" rel="external noreferrer">contact@littlelemon.com</a> </li>
-          </ul>
-            </div>
-            <div>
-            <h2 className="footer-header">Social media</h2>
+              <h2 className="footer-header">Social media</h2>
               <ul>
                 <li>
                   <a
                     href="https://instagram.com"
                     target="_blank"
-                    className="insta-icon" rel="noreferrer"
+                    className="insta-icon"
+                    rel="noreferrer"
                   >
                     <FontAwesomeIcon
                       icon={faCamera}
