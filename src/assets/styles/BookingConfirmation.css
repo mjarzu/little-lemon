@@ -1,0 +1,23 @@
+.confirm-bg {
+  margin-top: 95px;
+  line-height: 2.6;
+}
+
+.confirm-page {
+  grid-column: 3 / 11;
+  grid-row: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .confirm-page {
+    grid-column: 1 / 13;
+    padding: 32px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .confirm-page {
+    grid-column: 1 / 13;
+    padding: 16px;
+  }
+}

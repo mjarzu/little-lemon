@@ -1,0 +1,21 @@
+.booking {
+  background-color: #f8f9fa;
+  margin-top: 70px;
+}
+h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .booking {
+    grid-column: 1 / 13;
+    padding: 32px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .booking {
+    grid-column: 1 / 13;
+    padding: 16px;
+  }
+}

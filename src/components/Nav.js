@@ -56,11 +56,7 @@ function Nav() {
                 Home
               </Link>
             </li>
-            <li
-              onClick={() => {
-                scrollTo("#booking");
-              }}
-            >
+            <li>
               <Link to="/booking">Booking</Link>
             </li>
             <li>

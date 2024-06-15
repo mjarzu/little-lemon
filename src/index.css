@@ -3,6 +3,22 @@
   padding: 0;
 }
 
+/* Fonts */
+:root {
+  --font-primary: "Markazi Text", serif;
+  --font-secondary: "Karla", sans-serif;
+}
+
+/* Colors */
+:root {
+  --primary-green: #495e57;
+  --primary-yellow: #f4ce14;
+  --secondary-dark: #ee9972;
+  --secondary-light: #fbdabb;
+  --highlight-dark: #333333;
+  --highlight-light: #edefee;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -63,18 +79,4 @@ input[type="radio"] + label {
   position: absolute;
   top: 25px;
   left: 32px;
-}
-
-input,
-select {
-  border-radius: 10px;
-  height: 2rem;
-  border: none;
-  background-color: #d9d9d9;
-  padding: 0 12px;
-}
-
-select {
-  padding-right: 12px;
-  border-right: 12px solid transparent;
 }
