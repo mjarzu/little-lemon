@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Header from "./Header";
 import BurgerMenu from "./BurgerMenu";
 import "../assets/styles/Nav.css";
@@ -7,6 +7,8 @@ import "../assets/styles/Nav.css";
 function Nav() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const location = useLocation();
+  const showAllLinks = location.pathname === "/";
 
   useEffect(() => {
     function handleScroll() {
@@ -59,26 +61,30 @@ function Nav() {
             <li>
               <Link to="/booking">Booking</Link>
             </li>
-            <li>
-              <Link
-                to="/"
-                onClick={() => {
-                  scrollTo("#testimonials");
-                }}
-              >
-                Testimonials
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                onClick={() => {
-                  scrollTo("#about");
-                }}
-              >
-                About
-              </Link>
-            </li>
+            {showAllLinks && (
+              <li>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    scrollTo("#testimonials");
+                  }}
+                >
+                  Testimonials
+                </Link>
+              </li>
+            )}
+            {showAllLinks && (
+              <li>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    scrollTo("#about");
+                  }}
+                >
+                  About
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
       </div>
