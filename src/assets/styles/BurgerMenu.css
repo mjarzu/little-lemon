@@ -1,3 +1,37 @@
+.menu-button {
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  display: block;
+  font-size: 25px;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.menu.open {
+  display: flex;
+  transform: translateX(0);
+  padding-top: 80px;
+}
+
 .nav-item {
   padding: 10px;
   text-decoration: none;
@@ -5,81 +39,22 @@
   margin-bottom: 10px;
 }
 
-/* Position and sizing of burger button */
-.bm-burger-button {
+.menu-overlay {
   position: fixed;
-  width: 30px;
-  height: 26px;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: #495e57;
-}
-
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: #a90000;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
-}
-
-/*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  background: white;
-  padding: 2.5em 0.5em 0;
-  font-size: 1.15em;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-  display: block;
-  overflow: hidden;
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
-}
-
-/* Styling of overlay */
-.bm-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.3);
-}
-
-@media screen and (max-width: 375px) {
-  .bm-burger-button {
-    left: 16px;
-  }
+  z-index: 998;
 }
 
 @media screen and (min-width: 768px) {
-  .bm-burger-button {
+  .menu-button {
+    display: none;
+  }
+
+  .menu {
     display: none;
   }
 }

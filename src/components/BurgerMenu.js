@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import { slide as Menu } from "react-burger-menu";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLemon } from "@fortawesome/free-solid-svg-icons";
-
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/BurgerMenu.css";
 
-function BurguerMenu() {
+const CustomBurgerMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const showAllLinks = location.pathname === "/";
 
-  const handleStateChange = (state) => {
-    setMenuOpen(state.isOpen);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   const closeMenu = () => {
@@ -19,58 +18,70 @@ function BurguerMenu() {
   };
 
   const scrollTo = (section) => {
-    const aboutElement = document.querySelector(section);
-    aboutElement.scrollIntoView({ behavior: "smooth" });
+    const element = document.querySelector(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <Menu isOpen={menuOpen} onStateChange={handleStateChange}>
-      <Link
-        to="/"
-        onClick={() => {
-          closeMenu();
-          scrollTo("#callToAction");
-        }}
-        className="nav-item"
-      >
-        <FontAwesomeIcon icon={faLemon} size={"sm"} color={"#977e00"} />
-        <span style={{ marginLeft: "20px" }}>Home</span>
-      </Link>
-      <Link
-        to="/booking"
-        onClick={() => {
-          closeMenu();
-          scrollTo("#booking");
-        }}
-        className="nav-item"
-      >
-        <FontAwesomeIcon icon={faLemon} size={"sm"} color={"#977e00"} />
-        <span style={{ marginLeft: "20px" }}>Booking</span>
-      </Link>
-      <Link
-        to="#"
-        onClick={() => {
-          closeMenu();
-          scrollTo("#testimonials");
-        }}
-        className="nav-item"
-      >
-        <FontAwesomeIcon icon={faLemon} size={"sm"} color={"#977e00"} />
-        <span style={{ marginLeft: "20px" }}>Testimonials</span>
-      </Link>
-      <Link
-        to="#"
-        onClick={() => {
-          closeMenu();
-          scrollTo("#about");
-        }}
-        className="nav-item"
-      >
-        <FontAwesomeIcon icon={faLemon} size={"sm"} color={"#977e00"} />
-        <span style={{ marginLeft: "20px" }}>About</span>
-      </Link>
-    </Menu>
+    <div>
+      <button onClick={toggleMenu} className="menu-button">
+        {menuOpen ? (
+          <FontAwesomeIcon icon={faTimes} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
+      </button>
+      {menuOpen && (<div className={`menu ${menuOpen ? "open" : ""}`}>
+        <Link
+          to="/"
+          onClick={() => {
+            closeMenu();
+            scrollTo("#callToAction");
+          }}
+          className="nav-item"
+        >
+          <span style={{ marginLeft: "20px" }}>Home</span>
+        </Link>
+        <Link
+          to="/booking"
+          onClick={() => {
+            closeMenu();
+            scrollTo("#booking");
+          }}
+          className="nav-item"
+        >
+          <span style={{ marginLeft: "20px" }}>Booking</span>
+        </Link>
+        {showAllLinks && (
+          <Link
+            to="#"
+            onClick={() => {
+              closeMenu();
+              scrollTo("#testimonials");
+            }}
+            className="nav-item"
+          >
+            <span style={{ marginLeft: "20px" }}>Testimonials</span>
+          </Link>
+        )}
+        {showAllLinks && (
+          <Link
+            to="#"
+            onClick={() => {
+              closeMenu();
+              scrollTo("#about");
+            }}
+            className="nav-item"
+          >
+            <span style={{ marginLeft: "20px" }}>About</span>
+          </Link>
+        )}
+      </div>)}
+      {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+    </div>
   );
-}
+};
 
-export default BurguerMenu;
+export default CustomBurgerMenu;
