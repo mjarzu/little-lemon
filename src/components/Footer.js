@@ -11,10 +11,8 @@ function Footer() {
     const aboutElement = document.querySelector(section);
     aboutElement.scrollIntoView({ behavior: "smooth" });
   };
-  return (
-    <div className="footer-bg">
-      <div className="container">
-        <footer>
+  return (   
+        <footer className="footer-bg">
           <div className="footer-grid">
             <div>
               <img src={logo} alt="Lemon logo square" />
@@ -110,8 +108,6 @@ function Footer() {
             </div>
           </div>
         </footer>
-      </div>
-    </div>
   );
 }
 

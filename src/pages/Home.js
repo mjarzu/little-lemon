@@ -7,10 +7,19 @@ import Footer from "../components/Footer";
 function Homepage() {
   return (
     <>
-      <Hero />
-      <Specials />
-      <Testimonials />
-      <About />
+      <main>
+        <section>
+          <Hero />
+        </section>
+        <section>
+          <Specials />
+        </section>
+        <Testimonials />
+        <section>
+          <About />
+        </section>
+      </main>
+
       <Footer />
     </>
   );

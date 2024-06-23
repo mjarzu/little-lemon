@@ -21,24 +21,22 @@ function Hero() {
   return (
     <div className="hero-bg">
       <div className="container">
-        <main>
-          <div id="callToAction" className="hero-content">
-            <div className="hero-left">
-              <h1>Little Lemon</h1>
-              <h2>Chicago</h2>
-              <p>
-                We are a family owned Mediterranean restaurant, focused on
-                traditional recipes served with a modern twist.
-              </p>
-              <button onClick={handleSubmit} aria-label="Reserve a table">
-                Reserve a table
-              </button>
-            </div>
-            <div className="hero-right">
-              <img src={image} alt="Restaurant food" />
-            </div>
+        <div id="callToAction" className="hero-content">
+          <div className="hero-left">
+            <h1>Little Lemon</h1>
+            <h2>Chicago</h2>
+            <p>
+              We are a family owned Mediterranean restaurant, focused on
+              traditional recipes served with a modern twist.
+            </p>
+            <button onClick={handleSubmit} aria-label="Reserve a table">
+              Reserve a table
+            </button>
           </div>
-        </main>
+          <div className="hero-right">
+            <img src={image} alt="Restaurant food" />
+          </div>
+        </div>
       </div>
     </div>
   );
