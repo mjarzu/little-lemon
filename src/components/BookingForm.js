@@ -161,7 +161,7 @@ const CustomInput = ({ label, required, ...props }) => {
 
   return (
     <>
-      <label>
+      <label htmlFor={props.name}>
         {label}
         <span className={required}>{required}</span>
       </label>
@@ -169,6 +169,7 @@ const CustomInput = ({ label, required, ...props }) => {
       <input
         {...field}
         {...props}
+        id={props.name}
         className={`${meta.touched && meta.error ? "input-error" : ""}`}
       />
       {meta.touched && meta.error ? (
@@ -183,13 +184,14 @@ const CustomText = ({ label, required, rows, cols, ...props }) => {
 
   return (
     <>
-      <label>
+      <label htmlFor={props.name}>
         {label} <span className={styles.required}>{required}</span>
       </label>
 
       <textarea
         {...field}
         {...props}
+        id={props.name}
         className={`${styles.input} ${
           meta.touched && meta.error ? styles["input-error"] : ""
         }`}
@@ -206,12 +208,13 @@ const CustomSelect = ({ label, placeholder, required, options, ...props }) => {
 
   return (
     <>
-      <label>
+      <label htmlFor={props.name}>
         {label} <span className={required}>{required}</span>
       </label>
       <select
         {...field}
         {...props}
+        id={props.name}
         className={`${meta.touched && meta.error ? "input-error" : ""}`}
       >
         <option value="" disabled hidden>
