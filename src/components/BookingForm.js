@@ -6,9 +6,6 @@ import { useNavigate } from "react-router-dom";
 import styles from "../assets/styles/BookingForm.css";
 import Api from "../utils/API";
 
-
-import "../assets/styles/BookingForm.css";
-
 const BookingForm = () => {
   const { state: availableTimesState, dispatch } = Api();
   const navigate = useNavigate();
