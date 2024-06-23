@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/BurgerMenu.css";
 
-const CustomBurgerMenu = () => {
+const BurgerMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const showAllLinks = location.pathname === "/";
@@ -84,4 +84,4 @@ const CustomBurgerMenu = () => {
   );
 };
 
-export default CustomBurgerMenu;
+export default BurgerMenu;
