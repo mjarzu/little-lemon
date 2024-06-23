@@ -4,10 +4,8 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 import styles from "../assets/styles/BookingForm.css";
-import Api from "../utils/API";
 
-const BookingForm = () => {
-  const { state: availableTimesState, dispatch } = Api();
+const BookingForm = ({ availableTimes, dispatch }) => {
   const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
@@ -110,7 +108,7 @@ const BookingForm = () => {
               label="Time"
               name="time"
               placeholder="Please Select a time"
-              options={availableTimesState.availableTimes}
+              options={availableTimes}
               disabled={
                 !values.date ||
                 new Date(values.date) < new Date().setHours(0, 0, 0, 0)
